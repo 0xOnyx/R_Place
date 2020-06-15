@@ -1,0 +1,23 @@
+
+#color
+{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 100px;
+  width: 100%;
+  z-index: 99
+}
+
+.choise
+{
+  display: block;
+  height: 100%;
+  width: 12.5%;
+  border: white 1px solid;
+  transition: all 300ms ease;
+}

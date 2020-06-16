@@ -1,9 +1,22 @@
 let game = document.getElementById("game")
 let context = game.getContext("2d")
 
-let socket = io.connect("192.168.1.137:80")
+let socket = io.connect("192.168.1.137")
+
+
+
 
 socket.on("board",(canvas)=>{
+  for(let y = 0 ; y < canvas.length ; y++){
+    for(let x = 0 ; x < canvas[y].length ; x++){
+      context.fillStyle = canvas[y][x]
+      console.log( y +" "+ x + "=")
+      context.fillRect(( (x+1) *50)-50, ( (y+1) *50)-50, 50, 50)
+    }
+  }
+
+
+/*
   canvas.forEach((y, idY)=>{
     y.forEach((color, idX)=>{
       context.fillStyle = color
@@ -13,7 +26,7 @@ socket.on("board",(canvas)=>{
       //console.log( (((idX+1) *50)-50) +" "+ (((idY+1) *50)-50) + "=" + color)
       context.fillRect(( (idX+1) *50)-50, ( (idY+1) *50)-50, 50, 50)
     })
-  })
+  })*/
 })
 
 let colorActive = "white"
@@ -39,6 +52,10 @@ for(let i = 0 ; i < choise.length ; ++i){
   })
 }
 
+socket.on("new", (carre)=>{
+  context.fillStyle = carre.color
+  context.fillRect(( (carre.x +1) *50)-50, ( (carre.y+1) *50)-50, 50, 50)
+})
 
 game.addEventListener("click",(e)=>{
 

@@ -1,7 +1,7 @@
 let game = document.getElementById("game")
 let context = game.getContext("2d")
 
-let socket = io.connect("192.168.1.137")
+let socket = io.connect("vps.jeremy.best:333")
 
 
 

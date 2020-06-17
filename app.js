@@ -9,7 +9,7 @@ let app = express()
 let server = http.createServer(app)
 let io = socketIO.listen(server)
 
-
+/*
 let canvas = []
 
 for(let y = 0 ; y < 40 ; ++y){
@@ -19,9 +19,9 @@ for(let y = 0 ; y < 40 ; ++y){
   }
 }
 fs.writeFile("Dessin.txt", JSON.stringify(canvas), (err)=>{if(err){console.eror(err)}})
+*/
 
-
-//let canvas = JSON.parse( fs.readFileSync("Dessin.txt") )
+let canvas = JSON.parse( fs.readFileSync("Dessin.txt") )
 
 app.get("/",(req, res)=>{
   res.sendFile(__dirname + '/web/index.html')
@@ -40,4 +40,4 @@ io.on("connection", (socket)=>{
 })
 
 
-server.listen(80)
+server.listen(333)

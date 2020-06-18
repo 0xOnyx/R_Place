@@ -26,3 +26,20 @@ body
   border: white 1px solid;
   transition: all 300ms ease;
 }
+
+
+#gameDiv
+{
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow.y: scroll;
+}
+
+
+#game
+{
+  display: block;
+  height: 3000;
+  width: 2000;
+}
